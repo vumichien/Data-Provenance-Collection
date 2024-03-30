@@ -329,12 +329,22 @@ def download_openai_webgpt(accepted_filter_ids):
 def download_alpaca(accepted_filter_ids):
     return huggingface_download('tatsu-lab/alpaca', split='train')
 
+
+def download_deita_10k(accepted_filter_ids):
+    dset = huggingface_download("hkust-nlp/deita-10k-v0", split="train")
+    return pool_filter(dset, "source", accepted_filter_ids)
+
+ 
 def download_metamathqa(accepted_filter_ids):
     dset = huggingface_download('meta-math/MetaMathQA', split='train')
     return pool_filter(dset, "type", accepted_filter_ids)
 
+
 def download_pure_dove(accepted_filter_ids):
     return huggingface_download('LDJnr/Pure-Dove', split='train')
+
+def download_feedback_collection(accepted_filter_ids):
+    return huggingface_download('kaist-ai/Feedback-Collection')
 
 def download_evol_instruct(accepted_filter_ids):
     return huggingface_download('WizardLM/evol_instruct_70k', split='train')
@@ -754,6 +764,11 @@ def download_chatdoctor(accepted_filter_ids):
         genmedgpt_dset = huggingface_download("wangrongsheng/GenMedGPT-5k-en", split='train')
         dset += annotate_source(genmedgpt_dset, "chatdoctor-genmedgpt-5k")
     return dset
+
+def download_seabench(accepted_filter_ids):
+    dset = huggingface_download('SeaLLMs/Sea-bench', split='train')
+    return pool_filter(dset, "lang", accepted_filter_ids)
+  
 
 def download_agentinstruct(accepted_filter_ids):
     dset = []

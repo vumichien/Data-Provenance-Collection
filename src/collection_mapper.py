@@ -104,6 +104,10 @@ COLLECTION_FN_MAPPER = {
         "download_function": downloaders.download_pure_dove,
         "prepare_function": preparers.prepare_pure_dove,
     },
+    "Feedback-Collection": {
+        "download_function": downloaders.download_feedback_collection,
+        "prepare_function": preparers.prepare_feedback_collection,
+    },
     "Llama2-MedTuned-Instructions": {
         "download_function": downloaders.download_llama2_med_tuned_instructions,
         "prepare_function": preparers.prepare_llama2_med_tuned_instructions,
@@ -181,7 +185,6 @@ COLLECTION_FN_MAPPER = {
         "download_function": downloaders.download_joke_explanation,
         "prepare_function": preparers.prepare_joke_explanation,
     },
-
     "Book Summaries": {
         "download_function": downloaders.download_book_summaries,
         "prepare_function": preparers.prepare_book_summaries,
@@ -230,6 +233,14 @@ COLLECTION_FN_MAPPER = {
         "download_function": downloaders.download_open_orca,
         "prepare_function": preparers.prepare_open_orca,
     },
+    "SeaBench": {
+        "download_function": downloaders.download_seabench,
+        "prepare_function": preparers.prepare_seabench,
+    },
+    "Deita 10K": {
+        "download_function": downloaders.download_deita_10k,
+        "prepare_function": preparers.prepare_deita_10k,
+    },
     "ChatDoctor":{
         "download_function": downloaders.download_chatdoctor,
         "prepare_function": preparers.prepare_chatdoctor,
@@ -254,7 +265,7 @@ COLLECTION_FN_MAPPER = {
         "download_function": downloaders.download_bactrianx,
         "prepare_function": preparers.prepare_bactrianx,
     },
-    "WildChat":{
+    "WildChat": {
         "download_function": downloaders.download_wildchat,
         "prepare_function": preparers.prepare_wildchat,
     }

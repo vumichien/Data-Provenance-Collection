@@ -296,6 +296,17 @@ def prepare_evol_instruct(row):
     )
 
 
+def prepare_deita_10k(row):
+    messages = []
+    for i, turn in enumerate(row["conversations"]):
+        messages.append({
+            "from": "user" if turn["from"] == "human" else "assistant",
+            "text": turn["value"].strip(),
+            "parent": row["source"] if i == 0 else i-1
+        })
+    return messages
+
+
 def prepare_metamathqa(row):
     return convert_inputs_targets_to_messages(
         row["query"], row["response"], row["type"],
@@ -320,6 +331,13 @@ def prepare_pure_dove(row):
         })
         parent_id += 1
     return messages
+
+
+def prepare_feedback_collection(row):
+    return convert_inputs_targets_to_messages(
+        row['instruction'], row["output"], "feedback_collection",
+    )
+
 
 def prepare_sharegpt_vicuna(row):
     parent = "sharegpt_vicuna"
@@ -642,6 +660,16 @@ def prepare_chatdoctor(row):
         row["inputs"], row["outputs"], row["_source"]
     )
 
+def prepare_seabench(row):
+    inputs = row["turns"][0].strip()
+    outputs = row["chatgpt_response"].strip() if row["chatgpt_response"] else ""
+
+    return [
+        {"from": "user", "text": inputs, "parent": row["lang"]},
+        {"from": "assistant", "text": outputs, "parent": 0},
+    ]
+
+  
 def prepare_agentinstruct(row):
     datasets = row  # Based on the current structure, a row represents all datasets :TODO: might need to change this
     messages = []
