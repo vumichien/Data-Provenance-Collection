@@ -56,9 +56,18 @@ COLLECTION_FN_MAPPER = {
         "prepare_function": preparers.prepare_open_assistant,
         "custom_prepare": True,
     },
+    "Open Assistant v2": {
+        "download_function": downloaders.download_open_assistant_v2,
+        "prepare_function": preparers.prepare_open_assistant,
+        "custom_prepare": True,
+    },
     "Open Assistant OctoPack": {
         "download_function": downloaders.download_open_assistant_octopack,
         "prepare_function": preparers.prepare_oasst_octopack,
+    },
+    "Indic-Instruct": {
+        "download_function": downloaders.download_indic_instruct,
+        "prepare_function": preparers.prepare_indic_instruct,
     },
     "OpenAI (Summarize from Feedback)": {
         "download_function": downloaders.download_openai_summarization,
@@ -79,6 +88,10 @@ COLLECTION_FN_MAPPER = {
     "Alpaca": {
         "download_function": downloaders.download_alpaca,
         "prepare_function": preparers.prepare_alpaca,
+    },
+    "Nectar": {
+        "download_function": downloaders.download_nectar,
+        "prepare_function": preparers.prepare_nectar,
     },
     "MetaMathQA": {
         "download_function": downloaders.download_metamathqa,
@@ -104,7 +117,7 @@ COLLECTION_FN_MAPPER = {
         "download_function": downloaders.download_pure_dove,
         "prepare_function": preparers.prepare_pure_dove,
     },
-    "Feedback-Collection": {
+    "Feedback Collection": {
         "download_function": downloaders.download_feedback_collection,
         "prepare_function": preparers.prepare_feedback_collection,
     },
@@ -233,6 +246,10 @@ COLLECTION_FN_MAPPER = {
         "download_function": downloaders.download_open_orca,
         "prepare_function": preparers.prepare_open_orca,
     },
+    "SelFee":{
+        "download_function": downloaders.download_selfee,
+        "prepare_function": preparers.prepare_selfee,
+    },
     "SeaBench": {
         "download_function": downloaders.download_seabench,
         "prepare_function": preparers.prepare_seabench,
@@ -248,6 +265,10 @@ COLLECTION_FN_MAPPER = {
     "AgentInstruct": {
         "download_function": downloaders.download_agentinstruct,
         "prepare_function": preparers.prepare_agentinstruct,
+    },
+    "Cidar": {
+        "download_function": downloaders.download_cidar,
+        "prepare_function": preparers.prepare_cidar,
     },
     "PII-Masking-200k": {
         "download_function": downloaders.download_pii_masking_200k,
@@ -268,5 +289,9 @@ COLLECTION_FN_MAPPER = {
     "WildChat": {
         "download_function": downloaders.download_wildchat,
         "prepare_function": preparers.prepare_wildchat,
+    },
+    "Cobra Frames": {
+        "download_function": downloaders.download_cobra_frames,
+        "prepare_function": preparers.prepare_cobra_frames,
     }
 }
